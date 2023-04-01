@@ -1,0 +1,12 @@
+.heroContainer {
+	height: calc(100vh - 8rem);
+	display: flex;
+	align-items: center;
+}
+
+.heroText {
+	text-align: center;
+	font-weight: 300;
+	font-size: clamp(1.5rem, 0.4138rem + 6.2069vw, 5rem);
+	padding-bottom: 10rem;
+}
