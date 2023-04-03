@@ -1,0 +1,25 @@
+.techContainer {
+	text-align: center;
+	margin-top: 10rem;
+}
+
+.header {
+	margin-bottom: 3rem;
+}
+
+.techLogos {
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	width: 100%;
+	flex-wrap: wrap;
+
+	img {
+		max-width: 5rem;
+		height: auto;
+	}
+
+	@media (min-width: 768px) {
+		gap: 5rem;
+	}
+}

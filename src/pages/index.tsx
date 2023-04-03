@@ -5,6 +5,8 @@ import styles from '@/styles/Index.module.scss'
 import Nav from '@/components/Nav/Nav'
 import Hero from '@/components/Hero/Hero'
 import About from '@/components/About/About'
+import Tech from '@/components/Tech/Tech'
+import Projects from '@/components/Projects/Projects'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,6 +23,8 @@ export default function Home() {
         <Nav />
         <Hero />
         <About />
+        <Tech />
+        <Projects />
       </main>
     </>
   )
