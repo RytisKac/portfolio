@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
 import AboutMe from '../../assets/about-me.jpg';
+import Trackr from '../../assets/trackr.png';
+import CryptoTracker from '../../assets/crypto-tracker.png';
 import styles from './Projects.module.scss';
 import Image from 'next/image';
-type Props = {}
+import Button from '../Button/Button';
+type Props = {};
 
 const Projects = (props: Props) => {
 	return (
@@ -11,64 +14,50 @@ const Projects = (props: Props) => {
 			<div className={styles.projectsContainer}>
 				<div className={styles.projectContainer}>
 					<div className={styles.text}>
-						<h1>Project 1</h1>
+						<h1>Crypto tracker</h1>
 						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting
-							industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever
-							since the 1500s, when an unknown printer took a galley of type and
-							scrambled it to make a type specimen book. It has survived not only
-							five centuries, but also the leap into electronic typesetting,
-							remaining essentially unchanged. It was popularised in the 1960s with
-							the release of Letraset sheets containing Lorem Ipsum passages, and
-							more recently with desktop publishing software like Aldus PageMaker
-							including versions of Lorem Ipsum.
+							The Crypto Tracker website is a platform that utilizes the
+							Coingecko API to display real-time cryptocurrency prices and
+							market data.
+							<br />
+							<br />
+							Built with: <b>Next.js, Typescript, SCSS</b>
 						</p>
+						<div className={styles.buttonsWrapper}>
+							<Button text="Live site" href='https://crypto-tracker-haidrex.vercel.app/' target="_blank" />
+							<Button text="Github" href='https://github.com/Haidrex/crypto-tracker' target="_blank" />
+						</div>
 					</div>
 					<div className={styles.image}>
-						<Image src={AboutMe} alt="picture of roses" />
+						<Image src={CryptoTracker} alt="picture of roses" />
 					</div>
 				</div>
 				<div className={styles.projectContainer}>
 					<div className={styles.text}>
-						<h1>Project 2</h1>
+						<h1>Trackr</h1>
 						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting
-							industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever
-							since the 1500s, when an unknown printer took a galley of type and
-							scrambled it to make a type specimen book. It has survived not only
-							five centuries, but also the leap into electronic typesetting,
-							remaining essentially unchanged. It was popularised in the 1960s with
-							the release of Letraset sheets containing Lorem Ipsum passages, and
-							more recently with desktop publishing software like Aldus PageMaker
-							including versions of Lorem Ipsum.
+							Trackr was designed to help my brothers business track the work
+							time of his employees. Employees can check in and check out using
+							the app, and the system automatically records their work hours.
+							<br />
+							The system is also equipped with administrative tools that enable
+							managers to oversee their team&apos;s work time, manage employee
+							profiles, and export data into Excel spreadsheets
+							<br />
+							<br />
+							Built with: <b>React.js, SCSS, Node.js, PostgreSQL, Prisma</b>
 						</p>
+						<div className={styles.buttonsWrapper}>
+							<Button text="Github" href='https://github.com/Haidrex/trackr' target="_blank" />
+						</div>
 					</div>
 					<div className={styles.image}>
-						<Image src={AboutMe} alt="picture of roses" />
-					</div>
-				</div>
-				<div className={styles.projectContainer}>
-					<div className={styles.text}>
-						<h1>Project 3</h1>
-						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting
-							industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever
-							since the 1500s, when an unknown printer took a galley of type and
-							scrambled it to make a type specimen book. It has survived not only
-							five centuries, but also the leap into electronic typesetting,
-							remaining essentially unchanged. It was popularised in the 1960s with
-							the release of Letraset sheets containing Lorem Ipsum passages, and
-							more recently with desktop publishing software like Aldus PageMaker
-							including versions of Lorem Ipsum.
-						</p>
-					</div>
-					<div className={styles.image}>
-						<Image src={AboutMe} alt="picture of roses" />
+						<Image src={Trackr} alt="picture of roses" />
 					</div>
 				</div>
 			</div>
 		</div>
-	)
-}
+	);
+};
 
-export default Projects
+export default Projects;

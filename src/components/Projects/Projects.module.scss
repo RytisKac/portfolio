@@ -17,7 +17,7 @@
 
 .projectContainer {
 	display: flex;
-	flex-direction: column;
+	flex-direction: column-reverse;
 	padding-inline: 1rem;
 	gap: 1rem;
 
@@ -36,12 +36,23 @@
 	@media (min-width: 768px) {
 		width: 50%;
 	}
+
+	h1 {
+		margin-bottom: 1rem;
+	}
 }
 
 .image {
 
 	img {
 		width: 100%;
-		max-height: 30rem;
+		height: auto;
+		max-width: 40rem;
 	}
+}
+
+.buttonsWrapper {
+	display: flex;
+	gap: 1rem;
+	margin-top: 1rem;
 }
