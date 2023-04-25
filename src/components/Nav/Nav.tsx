@@ -6,11 +6,23 @@ import classNames from 'classnames';
 
 const Nav = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
+
+	const handleClick = (id: string) => {
+		const element = document.getElementById(id);
+
+		if (element) {
+			window.scrollTo({
+				top: element.offsetTop - 50,
+				behavior: 'smooth',
+			});
+		}
+	}
+
 	return (
 		<header>
 			<div className={styles.navContainer}>
 				<div>
-					<Image src={Logo} alt="logo" width={100} height={100} />
+					<h1>Rytis.Dev</h1>
 				</div>
 				<div className={classNames(styles.hamburgerButton, { [styles.open]: menuOpen })} onClick={() => setMenuOpen(!menuOpen)}>
 					<span></span>
@@ -19,9 +31,9 @@ const Nav = () => {
 				</div>
 				<nav className={styles.navItems}>
 					<ul>
-						<li>About</li>
-						<li>Projects</li>
-						<li>Contact</li>
+						<li onClick={() => handleClick('about')}>About</li>
+						<li onClick={() => handleClick('projects')}>Projects</li>
+						<li onClick={() => handleClick('contact')}>Contact</li>
 					</ul>
 				</nav>
 			</div>

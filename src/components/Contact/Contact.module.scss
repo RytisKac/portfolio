@@ -39,6 +39,7 @@
 }
 
 .fieldGroup {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -47,16 +48,29 @@
 
 	input,
 	textarea {
-		height: 2rem;
+		height: 2.5rem;
 		padding: 1rem;
+		outline: none;
+		border: 1px solid black;
 	}
+
 
 	textarea {
 		height: 10rem;
 	}
 }
 
-.button {
-	padding: 1rem 2rem;
-	cursor: pointer;
+.fieldError {
+
+	input,
+	textarea {
+		border: 1px solid red;
+	}
+}
+
+.error {
+	position: absolute;
+	bottom: -1.25rem;
+	color: red;
+	font-size: 0.75rem;
 }

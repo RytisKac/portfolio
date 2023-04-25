@@ -5,19 +5,16 @@ import Image from 'next/image';
 
 const About = () => {
 	return (
-		<div className={styles.aboutContainer}>
+		<div className={styles.aboutContainer} id="about">
 			<div className={styles.text}>
 				<h1>About me</h1>
 				<p>
-					Lorem Ipsum is simply dummy text of the printing and typesetting
-					industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever
-					since the 1500s, when an unknown printer took a galley of type and
-					scrambled it to make a type specimen book. It has survived not only
-					five centuries, but also the leap into electronic typesetting,
-					remaining essentially unchanged. It was popularised in the 1960s with
-					the release of Letraset sheets containing Lorem Ipsum passages, and
-					more recently with desktop publishing software like Aldus PageMaker
-					including versions of Lorem Ipsum.
+					I have a bachelor&apos;s degree in Information Systems from KTU and
+					currently work as a junior front-end developer at a fintech company.
+					My day-to-day work involves using jamstack technologies, but I also
+					enjoy working on my own projects and experimenting with new
+					technology. My current focus is to improve my front-end skills and
+					gradually expand my knowledge in back-end development.
 				</p>
 			</div>
 			<div className={styles.image}>
