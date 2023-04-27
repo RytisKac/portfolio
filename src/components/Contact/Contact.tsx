@@ -16,16 +16,16 @@ const Contact = () => {
 		e.preventDefault();
 
 		if (validateInput()) {
-			const res = await fetch("/api/sendgrid", {
+			const res = await fetch('/api/sendgrid', {
 				body: JSON.stringify({
 					subject: subject,
 					email: email,
 					message: message,
 				}),
 				headers: {
-					"Content-Type": "application/json",
+					'Content-Type': 'application/json',
 				},
-				method: "POST",
+				method: 'POST',
 			});
 
 			const { error } = await res.json();
@@ -35,7 +35,7 @@ const Contact = () => {
 				return;
 			}
 		}
-	}
+	};
 
 	const validateInput = () => {
 		setSubjectError(null);
@@ -50,7 +50,7 @@ const Contact = () => {
 		if (message.length === 0) setMessageError('This field is required');
 
 		if (!subjectError || !emailError || !messageError) return true;
-	}
+	};
 
 	return (
 		<div className={styles.container} id="contact">
@@ -64,7 +64,11 @@ const Contact = () => {
 					</p>
 				</div>
 				<form className={styles.fields}>
-					<div className={classNames(styles.fieldGroup, { [styles.fieldError]: subjectError })}>
+					<div
+						className={classNames(styles.fieldGroup, {
+							[styles.fieldError]: subjectError,
+						})}
+					>
 						<label htmlFor="subject">Subject</label>
 						<input
 							type="text"
@@ -75,9 +79,15 @@ const Contact = () => {
 								setSubject(e.target.value);
 							}}
 						/>
-						{subjectError && <span className={styles.error}>{subjectError}</span>}
+						{subjectError && (
+							<span className={styles.error}>{subjectError}</span>
+						)}
 					</div>
-					<div className={classNames(styles.fieldGroup, { [styles.fieldError]: emailError })}>
+					<div
+						className={classNames(styles.fieldGroup, {
+							[styles.fieldError]: emailError,
+						})}
+					>
 						<label htmlFor="subject">Email</label>
 						<input
 							type="email"
@@ -90,7 +100,11 @@ const Contact = () => {
 						/>
 						{emailError && <span className={styles.error}>{emailError}</span>}
 					</div>
-					<div className={classNames(styles.fieldGroup, { [styles.fieldError]: messageError })}>
+					<div
+						className={classNames(styles.fieldGroup, {
+							[styles.fieldError]: messageError,
+						})}
+					>
 						<label htmlFor="subject">Message</label>
 						<textarea
 							name="subject"
@@ -100,7 +114,9 @@ const Contact = () => {
 								setMessage(e.target.value);
 							}}
 						/>
-						{messageError && <span className={styles.error}>{messageError}</span>}
+						{messageError && (
+							<span className={styles.error}>{messageError}</span>
+						)}
 					</div>
 					<Button text="Send" onClick={handleSubmit} />
 				</form>
