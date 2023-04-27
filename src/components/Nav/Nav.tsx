@@ -9,6 +9,7 @@ const Nav = () => {
 
 	const handleClick = (id: string) => {
 		const element = document.getElementById(id);
+		if (menuOpen) setMenuOpen(false);
 
 		if (element) {
 			window.scrollTo({
@@ -31,16 +32,20 @@ const Nav = () => {
 				</div>
 				<nav className={styles.navItems}>
 					<ul>
-						<li onClick={() => handleClick('about')}>About</li>
-						<li onClick={() => handleClick('projects')}>Projects</li>
-						<li onClick={() => handleClick('contact')}>Contact</li>
+						<li onClick={() => handleClick('about')} className={styles.link}>About</li>
+						<li onClick={() => handleClick('projects')} className={styles.link}>Projects</li>
+						<li onClick={() => handleClick('contact')} className={styles.link}>Contact</li>
 					</ul>
 				</nav>
 			</div>
 			<div className={classNames(styles.mobileMenu, { [styles.mobileMenuOpen]: menuOpen })}>
-				<div>
-					this is a menu
-				</div>
+				<ul className={styles.menu}>
+
+					<li onClick={() => handleClick('about')} className={styles.link}>About</li>
+					<li onClick={() => handleClick('projects')} className={styles.link}>Projects</li>
+					<li onClick={() => handleClick('contact')} className={styles.link}>Contact</li>
+
+				</ul>
 			</div>
 		</header >
 	)
