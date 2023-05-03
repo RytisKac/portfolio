@@ -14,7 +14,7 @@ const Projects = (props: Props) => {
 			<div className={styles.projectsContainer}>
 				<div className={styles.projectContainer}>
 					<div className={styles.text}>
-						<h1>Crypto tracker</h1>
+						<h2>Crypto tracker</h2>
 						<p>
 							The Crypto Tracker website is a platform that utilizes the
 							Coingecko API to display real-time cryptocurrency prices and
@@ -42,7 +42,7 @@ const Projects = (props: Props) => {
 				</div>
 				<div className={styles.projectContainer}>
 					<div className={styles.text}>
-						<h1>Trackr</h1>
+						<h2>Trackr</h2>
 						<p>
 							Trackr was designed to help my brothers business track the work
 							time of his employees. Employees can check in and check out using
@@ -69,7 +69,7 @@ const Projects = (props: Props) => {
 				</div>
 				<div className={styles.projectContainer}>
 					<div className={styles.text}>
-						<h1>ToDo app</h1>
+						<h2>ToDo app</h2>
 						<p>
 							A simple todo list app which can be used to create new todo items,
 							delete them, mark as done and filter.

@@ -2,6 +2,7 @@ import React from 'react';
 import AboutMe from '../../assets/about-me.jpg';
 import styles from './About.module.scss';
 import Image from 'next/image';
+import Coding from '../../assets/coding.svg';
 
 const About = () => {
 	return (
@@ -18,7 +19,7 @@ const About = () => {
 				</p>
 			</div>
 			<div className={styles.image}>
-				<Image src={AboutMe} alt="picture of roses" />
+				<Image src={Coding} alt="Illustration of person coding" />
 			</div>
 		</div>
 	);
