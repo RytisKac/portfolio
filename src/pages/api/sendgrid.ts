@@ -57,7 +57,7 @@ async function sendEmail(req: NextApiRequest, res: NextApiResponse) {
 
 	try {
 		await sendgrid.send(msg);
-		res.status(200).json({ message: 'Email sent successfully' });
+		res.status(200).json({ type: 'success', message: 'Email sent successfully' });
 	} catch (err) {
 		console.error(err);
 		res.status(500).json({ error: 'Failed to send email' });

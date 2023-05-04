@@ -11,11 +11,16 @@ const Contact = () => {
 	const [emailError, setEmailError] = useState<string | null>(null);
 	const [message, setMessage] = useState('');
 	const [messageError, setMessageError] = useState<string | null>(null);
+	const [sending, setSending] = useState(false);
+	const [formError, setFormError] = useState<string | null>(null);
+	const [success, setSuccess] = useState<string | null>(null);
 
 	const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault();
 
 		if (validateInput()) {
+			setSending(true);
+
 			const res = await fetch('/api/sendgrid', {
 				body: JSON.stringify({
 					subject: subject,
@@ -31,9 +36,13 @@ const Contact = () => {
 			const { error } = await res.json();
 
 			if (error) {
-				console.log(error);
+				setFormError('There was a problem, try again');
+				setSending(false);
 				return;
 			}
+
+			setSuccess('Your message has been sent');
+			setSending(false);
 		}
 	};
 
@@ -41,6 +50,8 @@ const Contact = () => {
 		setSubjectError(null);
 		setEmailError(null);
 		setMessageError(null);
+		setFormError(null);
+		setSuccess(null);
 
 		if (subject.length === 0) setSubjectError('This field is required');
 
@@ -118,7 +129,12 @@ const Contact = () => {
 							<span className={styles.error}>{messageError}</span>
 						)}
 					</div>
-					<Button text="Send" onClick={handleSubmit} />
+					{formError && <span className={styles.formError}>{formError}</span>}
+					{success && <span className={styles.success}>{success}</span>}
+					<Button
+						text={sending ? 'Sending...' : 'Send'}
+						onClick={handleSubmit}
+					/>
 				</form>
 			</div>
 		</div>
