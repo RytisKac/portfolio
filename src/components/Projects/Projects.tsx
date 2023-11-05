@@ -1,6 +1,7 @@
 import React from 'react';
 import Trackr from '../../assets/trackr.png';
 import CryptoTracker from '../../assets/crypto-tracker.png';
+import Blog from '../../assets/blog.png';
 import Todo from '../../assets/todo-app.png';
 import styles from './Projects.module.scss';
 import Image from 'next/image';
@@ -65,6 +66,30 @@ const Projects = (props: Props) => {
 					</div>
 					<div className={styles.image}>
 						<Image src={Trackr} alt="Trackr screenshots" />
+					</div>
+				</div>
+				<div className={styles.projectContainer}>
+					<div className={styles.text}>
+						<h2>Blog app</h2>
+						<p>
+							Simple blog app with a custom CMS. The app allows users to create
+							new blog posts, edit and delete them. The app also has a custom
+							CMS with rich text editor, which allows the admin to manage the
+							blog posts.
+							<br />
+							<br />
+							Built with: <b>Laravel, Blade Templates, TailwindCSS, MySQL</b>
+						</p>
+						<div className={styles.buttonsWrapper}>
+							<Button
+								text="Github"
+								href="https://github.com/RytisKac/blog-app"
+								target="_blank"
+							/>
+						</div>
+					</div>
+					<div className={styles.image}>
+						<Image src={Blog} alt="Blog app screenshots" />
 					</div>
 				</div>
 				<div className={styles.projectContainer}>
